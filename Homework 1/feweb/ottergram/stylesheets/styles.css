@@ -32,10 +32,11 @@
   font-style: normal;
 }
   /* this part doesn't have in  the book, added to make Figure 3.26 */
-* {
+/* * {
   margin-left: 0;
   margin-right: 0;
-}
+} */
+
 
 html, body {
   height: 100%;
@@ -55,7 +56,7 @@ a {
 }
 
 .main-header {
-  /* grow shrink basis -> no grow do shrink */
+  /* grow shrink basis -> no grow, do shrink , automatically regenerate when the windows size changed */
   flex: 0 1 auto;
 }
 
@@ -157,8 +158,8 @@ a {
   font-family: airstreamregular;
   color: white;
   /* color 0,0,0,0.9 slightly transparent black
-  1px to right (negative to left), 2px below (negative above), 9px blur radius */
-  text-shadow: rgba(0, 0, 0, 0.9) 10px 2px 9px;
+  1px to right (negative to left), 2px below (negative above), 9px blur radius (less blur, easy to see) */
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px; /*-4px 10px 6px*/
   font-size: 40px;
   /* border: 2px yellow solid; */
 }
