@@ -1,0 +1,190 @@
+/*
+  What limits minimum windows size
+  why don't order class from top to bottom of html
+  Does thumbnail-title need set font to math with Figure 3.16
+  What makes 4.17, change thumbnail-list to flex create moving
+  What flex-direction: column does
+  Is display: flex inherit to the child or not
+  Figure 4.20, why body border does not cover whole elements?
+*/
+
+
+
+@font-face {
+  font-family: 'airstreamregular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/Airstream-webfont.eot');
+  src: url('fonts/Airstream-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/Airstream-webfont.svg#airstreamregular') format('svg'),
+  url('fonts/Airstream-webfont.ttf') format('truetype'),
+  url('fonts/Airstream-webfont.woff') format('woff');
+
+}
+
+@font-face {
+  font-family: 'lakeshore';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/LAKESHOR-webfont.eot');
+  src: url('fonts/LAKESHOR-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/LAKESHOR-webfont.svg#lakeshore') format('svg'),
+  url('fonts/LAKESHOR-webfont.ttf') format('truetype'),
+  url('fonts/LAKESHOR-webfont.woff') format('woff');
+
+}
+  /* this part doesn't have in  the book, added to make Figure 3.26 */
+/* * {
+  margin-left: 0;
+  margin-right: 0;
+} */
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: rgb(149, 194, 215);
+  display: flex;
+  font-size: 10px;
+  flex-direction: column;
+
+  /* border: 2px purple solid; */
+}
+/*============================================*/
+a {
+  text-decoration: none;
+}
+
+.main-header {
+  /* grow shrink basis -> no grow, do shrink , automatically regenerate when the windows size changed */
+  flex: 0 1 auto;
+}
+
+.logo-text {
+  background: white;
+  font-family: lakeshore;
+  font-size: 37px;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+/*============================================*/
+.main-content {
+  /* do grow do shrink */
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+/*============================================*/
+/* .thumbnail-item + .thumbnail-item {
+  margin-top: 10px;
+} */
+
+.thumbnail-item {
+  /* most browser can see rgb */
+  border: 1px solid rgb(100%, 100%, 100%);
+
+  /* if browser can see rgba then it take this line */
+  border: 1px solid rgba(100%, 100%, 100%, 0.8);
+  /* display: block; */
+  display: inline-block;
+  max-width: 120px;
+  min-width: 120px;
+
+  /* border: 2px red solid; */
+}
+
+.thumbnail-list {
+  /* display: flex; makes thumbnail-item move arround */
+  display: flex;
+
+  flex: 0 1 auto;
+  /* space between thumbnail-item equally */
+  justify-content: space-between;
+  /* remove style of list such as bullet point */
+  list-style: none;
+
+  order: 2;
+  overflow-x: auto;
+  padding: 0;
+  white-space: nowrap;
+  /* border: 5px green solid; */
+}
+
+.thumbnail-image {
+  display: block;
+  width: 100%;
+  /* border: 3px blue solid; */
+
+}
+
+.thumbnail-title {
+  background: rgb(96, 125, 139);
+  color: rgb(202, 238, 255);
+  display: block;
+  font-size: 18px;
+  margin: 0;
+  padding: 4px 10px;
+
+
+  /* border: yellow 2px solid; */
+
+}
+/*============================================*/
+
+.detail-image-container {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  /* border: 5px green solid; */
+}
+
+.detail-image-frame {
+
+  position: relative;
+  text-align: center;
+  /* border: 1px black solid; */
+}
+
+.detail-image {
+  width: 90%;
+}
+
+.detail-image-title {
+  bottom: -16px;
+  color: white;
+  font-family: airstreamregular;
+  font-size: 40px;
+  left: 4px;
+  position: absolute;
+
+  /* color 0,0,0,0.9 slightly transparent black
+  1px to right (negative to left), 2px below (negative above), 9px blur radius (less blur, easy to see) */
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px; /*-4px 10px 6px*/
+  /* border: 2px yellow solid; */
+}
+
+@media all and (min-width: 768px) {
+  /* Styles will go here */
+  .main-content {
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .thumbnail-list {
+    flex-direction: column;
+    order: 0;
+    margin-left: 20px;
+  }
+
+  .thumbnail-item {
+    max-width: 260px;
+  }
+
+  .thumbnail-item + .thumbnail-item {
+    margin-top: 20px;
+  }
+}
