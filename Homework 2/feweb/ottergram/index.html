@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- Contend set Viewport is the same with device's screen width
+    initial-scall=1: set zoom 100% -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
@@ -16,6 +18,9 @@
       <ul class="thumbnail-list">
 
         <li class="thumbnail-item" id="barry-otter">
+          <!-- data attribute start with "data-" -->
+          <!-- custome data attribute lets you designate what HTML elements on the page your JavaScript interacts with -->
+          <!-- use for query element -->
           <a href="img/otter1.jpg"  data-image-role="trigger"
                                     data-image-title="Stayin' Alive"
                                     data-image-url="img/otter1.jpg">
@@ -66,13 +71,20 @@
 
 
       <div class="detail-image-container">
+        <!-- <input class="detail-image-previous" data-detail-previous="target-previous" type="button" value="<" alt="previous button"> -->
+        <input class="detail-image-button" data-detail-previous="target-previous" type="button" value="<" alt="previous button">
+
         <div class="detail-image-frame">
           <img class="detail-image" data-image-role="target" src="img/otter1.jpg" alt="picture of otter">
           <span class="detail-image-title" data-image-role="title">Stayin' Alive</span>
         </div>
+
+        <!-- <input class="detail-image-next" data-detail-next="target-next" type="button" value=">" alt="next button"> -->
+        <input class="detail-image-button" data-detail-next="target-next" type="button" value=">" alt="next button">
       </div>
 
     </main>
+    <!-- putting JavaScript at the bottom of the body ensure it does not run until after markup has been parsed -->
     <script src="scripts/main.js" charset="utf-8"></script>
   </body>
 </html>
@@ -81,4 +93,3 @@
 cd /mnt/d/Courses/CSUF/F19\ Current/CPSC\ 349\ -\ T3\ -\ Web\ Front-End\ Engineering/feweb/ottergram/
 browser-sync start --server --files "*.html, stylesheets/.css"
 -->
-<>d.ad<.>

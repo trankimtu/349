@@ -40,18 +40,18 @@
 } */
 
 
+body {
+  background: rgb(149, 194, 215);
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+
+  /* border: 2px purple solid; */
+}
 html, body {
   height: 100%;
 }
 
-body {
-  background: rgb(149, 194, 215);
-  display: flex;
-  font-size: 10px;
-  flex-direction: column;
-
-  /* border: 2px purple solid; */
-}
 /*============================================*/
 a {
   text-decoration: none;
@@ -72,10 +72,12 @@ a {
 }
 /*============================================*/
 .main-content {
+  /* main-content has thumbnail-list and detail-image-container */
   /* do grow do shrink */
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
+  /* border: 2px solid red; */
 }
 /*============================================*/
 /* .thumbnail-item + .thumbnail-item {
@@ -138,7 +140,7 @@ a {
   align-items: center;
   display: flex;
   flex: 1 1 auto;
-  justify-content: center;
+  justify-content: space-around;
   /* border: 5px green solid; */
 }
 
@@ -147,6 +149,13 @@ a {
   position: relative;
   text-align: center;
   /* border: 1px black solid; */
+
+}
+
+.detail-image-button {
+  border-radius: 50%;
+  height: 20%;
+  /* border: 2px black solid; */
 }
 
 .detail-image {
@@ -167,17 +176,13 @@ a {
   /* border: 2px yellow solid; */
 }
 
+/* specify @media type all to handle all size of devices such as smart TV or handle devices */
 @media all and (min-width: 768px) {
   /* Styles will go here */
   .main-content {
+    /* make thumbnails and the detail image sit next to one another */
     flex-direction: row;
     overflow: hidden;
-  }
-
-  .thumbnail-list {
-    flex-direction: column;
-    order: 0;
-    margin-left: 20px;
   }
 
   .thumbnail-item {
@@ -187,4 +192,11 @@ a {
   .thumbnail-item + .thumbnail-item {
     margin-top: 20px;
   }
+
+  .thumbnail-list {
+    flex-direction: column;
+    margin-left: 20px;
+    order: 0;
+  }
+
 }
