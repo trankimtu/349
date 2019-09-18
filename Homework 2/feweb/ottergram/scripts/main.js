@@ -46,7 +46,7 @@ function setDetailsFromThumb(thumbnail) {
 
 function addThumbClickHandler(thumb) {
   "use strict";
-  thumb.addEventListener("click", function (event) {
+  thumb.addEventListener("click", function(event) {
     event.preventDefault();
     setDetailsFromThumb(thumb);
     showDetails();
@@ -74,14 +74,14 @@ function showDetails() {
   var frame = document.querySelector(DETAIL_FRAME_SELECTOR);
   document.body.classList.remove(HIDDEN_DETAIL_CLASS);
   frame.classList.add(TINY_EFFECT_CLASS);
-  setTimeout(function () {
+  setTimeout(function() {
     frame.classList.remove(TINY_EFFECT_CLASS);
   }, 50);
 }
 
 function addKeyPressHandler() {
   "use strict";
-  document.body.addEventListener("keyup", function (event) {
+  document.body.addEventListener("keyup", function(event) {
     event.preventDefault();
     // console.log(event.keyCode);
     if (event.keyCode === ESC_KEY) {
@@ -132,7 +132,7 @@ function initializeEvents() {
 //   title: "To Love Somebody"
 // };
 
-function currentThumb () {
+function currentThumb() {
   var currentIndex;
   var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
   var detailImageSrc = detailImage.getAttribute("src");
@@ -188,7 +188,7 @@ function setDetailPrevious() {
   "use strict";
 
   var detailPrevious = document.querySelector(DETAIL_PREVIOUS_SELECTOR);
-  detailPrevious.addEventListener("click", function () {
+  detailPrevious.addEventListener("click", function() {
 
     var image = previousImage();
     var title = previousTitle();
@@ -236,7 +236,7 @@ function setDetailNext() {
   "use strict";
 
   var detailnext = document.querySelector(DETAIL_NEXT_SELECTOR);
-  detailnext.addEventListener("click", function () {
+  detailnext.addEventListener("click", function() {
 
     var image = nextImage();
     var title = nextTitle();
@@ -246,9 +246,6 @@ function setDetailNext() {
 
 
 // ================================================================================
-
-
-
 
 
 

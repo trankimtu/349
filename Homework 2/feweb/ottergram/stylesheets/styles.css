@@ -198,6 +198,7 @@ a {
   align-items: center;
   flex-direction: column;
 }
+
 .hidden-detail .thumbnail-item {
   max-width: 80%;
 }
