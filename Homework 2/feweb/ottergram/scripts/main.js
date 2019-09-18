@@ -83,7 +83,7 @@ function addKeyPressHandler() {
   "use strict";
   document.body.addEventListener("keyup", function (event) {
     event.preventDefault();
-    console.log(event.keyCode);
+    // console.log(event.keyCode);
     if (event.keyCode === ESC_KEY) {
       hideDetails();
     }
@@ -159,7 +159,7 @@ function previousIndex() {
   if (currentIndex == 0) preIndex = 4;
   else preIndex = currentIndex - 1;
 
-  console.log("preIndex = " + preIndex);
+  // console.log("preIndex = " + preIndex);
   return preIndex;
 }
 
@@ -169,7 +169,7 @@ function previousImage() {
 
   var preImage = getThumbnailsArray()[preIndex];
   var imageScr = imageFromThumb(preImage);
-  console.log("imageScr = " + imageScr);
+  // console.log("imageScr = " + imageScr);
   return imageScr;
 }
 
@@ -179,7 +179,7 @@ function previousTitle() {
 
   var preTitle = getThumbnailsArray()[preIndex];
   var title = titleFromThumb(preTitle);
-  console.log("title = " + title);
+  // console.log("title = " + title);
   return title;
 }
 
@@ -207,7 +207,7 @@ function nextIndex() {
   if (currentIndex == 4) nextIndex = 0;
   else nextIndex = currentIndex + 1;
 
-  console.log("nextIndex = " + nextIndex);
+  // console.log("nextIndex = " + nextIndex);
   return nextIndex;
 }
 
@@ -217,7 +217,7 @@ function nextImage() {
 
   var nImage = getThumbnailsArray()[nIndex];
   var imageScr = imageFromThumb(nImage);
-  console.log("imageScr = " + imageScr);
+  // console.log("imageScr = " + imageScr);
   return imageScr;
 }
 
@@ -227,7 +227,7 @@ function nextTitle() {
 
   var nTitle = getThumbnailsArray()[nIndex];
   var title = titleFromThumb(nTitle);
-  console.log("title = " + title);
+  // console.log("title = " + title);
   return title;
 }
 
