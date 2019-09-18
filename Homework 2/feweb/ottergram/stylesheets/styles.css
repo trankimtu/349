@@ -95,7 +95,14 @@ a {
   max-width: 120px;
   min-width: 120px;
 
+  transition: transform 133ms ease-in-out;
+  /* transform: scale(1.2); */
   /* border: 2px red solid; */
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.2);
+  /* transition: transform 1000ms ease-in; */
 }
 
 .thumbnail-list {
@@ -110,7 +117,7 @@ a {
 
   order: 2;
   overflow-x: auto;
-  padding: 0;
+  padding: 20px 0;
   white-space: nowrap;
   /* border: 5px green solid; */
 }
@@ -148,8 +155,15 @@ a {
 
   position: relative;
   text-align: center;
+
+  transition: transform 333ms cubic-bezier(1,.06,.28,1);
   /* border: 1px black solid; */
 
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
 }
 
 .detail-image-button {
@@ -176,6 +190,19 @@ a {
   /* border: 2px yellow solid; */
 }
 
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .thumbnail-list {
+  align-items: center;
+  flex-direction: column;
+}
+.hidden-detail .thumbnail-item {
+  max-width: 80%;
+}
+
+
 /* specify @media type all to handle all size of devices such as smart TV or handle devices */
 @media all and (min-width: 768px) {
   /* Styles will go here */
@@ -197,6 +224,9 @@ a {
     flex-direction: column;
     margin-left: 20px;
     order: 0;
+
+    padding: 0 35px;
+
   }
 
 }
