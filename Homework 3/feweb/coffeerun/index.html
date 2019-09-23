@@ -71,9 +71,21 @@
         </form>
       </div>
     </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist">
+        </div>
+      </div>
+    </div>
+
   </section>
 
-
+  <!-- book <script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
   <script src="scripts/datastore.js" charset="utf-8"></script>
   <script src="scripts/truck.js" charset="utf-8"></script>
   <script src="scripts/main.js" charset="utf-8"></script>
@@ -87,6 +99,6 @@
 
 cd D:\Courses\CSUF\F19 Current\CPSC 349 - T3 - Web Front-End Engineering\homework\Homework 3\feweb\coffeerun
 
-browser-sync start --server --files "*.html, stylesheets/.css"
+browser-sync start --server --files "*.html, stylesheets/*.css, scripts/*.js"
 
 -->
