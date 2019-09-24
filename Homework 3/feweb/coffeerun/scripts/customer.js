@@ -11,49 +11,52 @@
   }
 
   // customer is DataStore Object which has key = email vaule, and val = order info
-  Customer.prototype.createTitle = function(title) {
-    console.log("Adding title for " + order.emailAddress);
-    this.db.add(order.emailAddress, order);
+  Customer.prototype.createCustomer = function(cus) {
+    console.log("Adding customer for " + cus.emailAddress);
+    this.db.add(cus.emailAddress, cus);
   };
 
-  Truck.prototype.deliverOrder = function(customerId) {
-    console.log("Delivering order for " + customerId);
-    this.db.remove(customerId);
-  };
-
-  Truck.prototype.printOrders = function() {
+  Customer.prototype.printCustomer = function() {
     var customerIdArray = Object.keys(this.db.getAll());
-    console.log("Truck " + this.truckId + " has pending orders:");
+    console.log("Thank you " + this.CustomerId + " for your payment:");
     customerIdArray.forEach(function(id) {
       console.log(this.db.get(id));
     }.bind(this));
   };
 
-  App.Truck = Truck;
+  App.Customer = Customer;
   window.App = App;
 })(window);
 
 
 //
 // console
-//   // Create myTruck is a Truck with stuckId = 007 and truck.db = new App.DataStore
-//   var myTruck = new App.Truck('007', new App.DataStore());
+//   // Create myCustomer is a Customer with customerId = 007 and Customer.db = new App.DataStore
+//   var myCustomer = new App.Customer('007', new App.DataStore());
 //
-//   // order is an DataStore object = {emailAddress: 'email@email.com', coffee: 'defaf'}
-//   myTruck.createOrder({
-//     emailAddress: 'dr@no.com',
-//     coffee: 'decaf'
+//   // cus is an DataStore object = {title: 'Mister', name: 'My Name', emailAddress: 'email@email.com', password: 'my password'}
+//   myCustomer.createCustomer({
+//     title: 'Mister',
+//     name: 'Customer 1',
+//     emailAddress: 'customer1@email.com',
+//     password: 'customer 1 password'
 //   });
-//   myTruck.createOrder({
-//     emailAddress: 'me@goldfinger.com',
-//     coffee: 'double mocha'
+//   myCustomer.createCustomer({
+//     title: 'Miss',
+//     name: 'Customer 2',
+//     emailAddress: 'customer2@email.com',
+//     password: 'customer 2 password'
 //   });
-//   myTruck.createOrder({
-//     emailAddress: 'm@bond.com',
-//     coffee: 'earl grey'
+//   myCustomer.createCustomer({
+//     title: 'Mister',
+//     name: 'Customer 3',
+//     emailAddress: 'customer3@email.com',
+//     password: 'customer 3 password'
 //   });
-//   myTruck.db;
-//   myTruck.deliverOrder('m@bond.com');
-//   myTruck.deliverOrder('dr@no.com');
-//   myTruck.db;
-//   myTruck.printOrders();
+//
+
+
+//   myCustomer.db;
+//   myCustomer.printCustomer(007);
+//   myCustomer.db;
+//   myCustomer.printCustomer();
