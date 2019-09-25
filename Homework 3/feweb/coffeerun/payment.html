@@ -95,14 +95,24 @@
       </p>
     </section>
     <p>
-        <!-- <a href="#ex1" rel="modal:open"> -->
-          <button type="submit" data-toggle="modal" data-target="#ex1">Validate the payment</button>
-        <!-- </a> -->
+      <!-- <a href="#ex1" rel="modal:open"> -->
+      <button type="submit" class="trigger">Validate the payment</button>
+      <!-- </a> -->
     </p>
   </form>
 
 
   <!-- Step 6 =============== -->
+  <button class="trigger">Click here to trigger the modal!</button>
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h1>Hello, I am a modal!</h1>
+    </div>
+  </div>
+
+
+
 
   <!-- Modal HTML embedded directly into document -->
   <div id="ex1" class="modal">
@@ -110,7 +120,7 @@
     <a href="#" rel="modal:close">Close</a>
   </div>
 
-<p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+  <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
   <!-- ====================== -->
 
   <!-- Remember to include jQuery -->
