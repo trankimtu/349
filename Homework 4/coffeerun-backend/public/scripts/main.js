@@ -1,7 +1,7 @@
 (function(window) {
-  'use strict';
-  var FORM_SELECTOR = '[data-coffee-order="form"]';
-  var CHECKLIST_SELECTOR = '[data-coffee-order=\"checklist\"]';
+  "use strict";
+  var FORM_SELECTOR = "[data-coffee-order=\"form\"]";
+  var CHECKLIST_SELECTOR = "[data-coffee-order=\"checklist\"]";
   var SERVER_URL = "http://localhost:2403/coffeeorders";
 
   var App = window.App;
@@ -13,7 +13,7 @@
   var CheckList = App.CheckList;
 
   var remoteDS = new RemoteDataStore(SERVER_URL);
-  var myTruck = new Truck('ncc-1701', remoteDS);
+  var myTruck = new Truck("ncc-1701", remoteDS);
   window.myTruck = myTruck;
 
   var checkList = new CheckList(CHECKLIST_SELECTOR);

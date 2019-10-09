@@ -1,10 +1,10 @@
 (function(window) {
-  'use strict';
+  "use strict";
   var App = window.App || {};
 
   function RemoteDataStore(url) {
     if (!url) {
-      throw new Error('No remote URL supplied.');
+      throw new Error("No remote URL supplied.");
       return;
     }
     this.serverUrl = url;
@@ -31,7 +31,7 @@
     };
   };
   RemoteDataStore.prototype.get = function(key, cb) {
-    $.get(this.serverUrl + '/' + key, function(serverResponse) {
+    $.get(this.serverUrl + "/" + key, function(serverResponse) {
       console.log(serverResponse);
       cb(serverResponse);
     });
@@ -47,8 +47,8 @@
       console.log(serverResponse);
       serverResponse.forEach(function(object) {
         console.log("ID is " + object.id);
-        $.ajax(getUrl + '/' + object.id, {
-          type: 'DELETE'
+        $.ajax(getUrl + "/" + object.id, {
+          type: "DELETE"
         });
       });
     });
