@@ -1,10 +1,9 @@
 (function(window) {
-  "use strict";
+  'use strict';
   var App = window.App || {};
   var Validation = {
     isCompanyEmail: function(email) {
-      // return /bignerdranch\.com/.test(email);
-      return /@*\.com/.test(email);
+      return /bignerdranch\.com/.test(email);
     }
   };
   App.Validation = Validation;

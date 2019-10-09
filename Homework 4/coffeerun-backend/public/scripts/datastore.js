@@ -1,7 +1,6 @@
 (function(window) {
-  "use strict";
+  'use strict';
   var App = window.App || {};
-  var Promise = window.Promise;
 
   function DataStore() {
     this.data = {};
@@ -9,32 +8,15 @@
 
   DataStore.prototype.add = function(key, val) {
     this.data[key] = val;
-    var promise = new Promise(function(resolve, reject) {
-      this.data[key] = val;
-      resolve();
-    }.bind(this));
-
-    return promise;
   };
   DataStore.prototype.get = function(key) {
-    var promise = new Promise(function(resolve, reject) {
-      resolve(this.data[key]);
-    }.bind(this));
-
-    return promise;
+    return this.data[key];
   };
   DataStore.prototype.getAll = function() {
-    var promise = new Promise(function(resolve, reject) {
-      resolve(this.data);
-    }.bind(this));
-    return promise;
+    return this.data;
   };
   DataStore.prototype.remove = function(key) {
-    var promise = new Promise(function(resolve, reject) {
-      delete this.data[key];
-      resolve();
-    }.bind(this));
-    return promise;
+    delete this.data[key];
   };
 
   App.DataStore = DataStore;
